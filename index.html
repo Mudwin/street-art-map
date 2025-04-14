@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>Ekaterinburg Street Art Map | Карта</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./scripts/main.js" type="module" defer></script>
+  </head>
+  <body style="height: 100%">
+    <div id="mapId" style="height: 100%"></div>
+    <script>
+      async function initMap() {
+        const element = document.getElementById("mapId");
+
+        const { ColorScheme } = await google.maps.importLibrary("core");
+
+        const options = {
+          zoom: 15,
+          maxZoom: 20,
+          minZoom: 12,
+          center: { lat: 56.8375405, lng: 60.5950455 },
+          colorScheme: ColorScheme.DARK,
+        };
+
+        const myMap = new google.maps.Map(element, options);
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQZ1GPW07tfz4gLLFy07pFVWBI_QNrgEA&callback=initMap"
+    ></script>
+  </body>
+</html>

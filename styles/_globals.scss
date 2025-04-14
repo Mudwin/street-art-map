@@ -1,0 +1,24 @@
+@use "helpers" as *;
+
+body {
+  font-family: var(--font-family-base);
+}
+
+// Добавить иерархию заголовков + глобальные стили для них
+// Глобальные стили для ссылок
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+:focus-visible {
+  outline: rem(2) solid green; // Изменить цвет после выбора цветовой гаммы
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}
