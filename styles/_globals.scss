@@ -2,10 +2,15 @@
 
 body {
   font-family: var(--font-family-base);
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: rem(0);
 }
 
 // Добавить иерархию заголовков + глобальные стили для них
-// Глобальные стили для ссылок
+// Выделить глобальные стили для ссылок
 
 a,
 button,
@@ -21,4 +26,25 @@ svg * {
   outline: rem(2) solid green; // Изменить цвет после выбора цветовой гаммы
   outline-offset: rem(4);
   transition-duration: 0s !important;
+}
+
+.ymaps-2-1-79-inner-panes {
+  /* 
+  filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+    saturate(140%); 
+  -ms-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+    saturate(140%);
+  -webkit-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+    saturate(140%);
+  -moz-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+    saturate(140%);
+  -o-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+    saturate(140%);  */
+
+  filter: brightness(100%) contrast(120%) saturate(130%);
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
 }

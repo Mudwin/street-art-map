@@ -1,9 +1,12 @@
 @use "helpers" as *;
 
 :root {
-  // Добавить цветовую гамму
+  --color-gray: rgb(68, 73, 100);
+  --color-gray-transparent: rgb(68, 73, 100, 0.9);
+  --color-white: #d9dadb;
+  --color-dark-gray: #36454f;
 
-  --font-family-base: "Rubik" sans-serif;
+  --font-family-base: "Rubik", sans-serif;
 
   --transition-duration: 0.2s;
 }

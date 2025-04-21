@@ -1,0 +1,32 @@
+@use "../helpers" as *;
+
+.button {
+  z-index: 2;
+  position: absolute;
+  border-radius: rem(15);
+  padding: rem(8) rem(10);
+  color: var(--color-white);
+  background-color: var(--color-dark-gray);
+  border: none;
+  margin: rem(20);
+
+  @include hover {
+    background-color: var(--color-gray);
+  }
+
+  // Добавить hover, focus, active
+}
+
+.filter-button {
+  top: 0;
+  left: 0;
+}
+
+.nav-button {
+  top: 0;
+  right: 0;
+  font-size: rem(25);
+
+  @include square(#{rem(40)});
+  @include flex-center;
+}

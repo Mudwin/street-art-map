@@ -6,69 +6,28 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
-    <title>Ekaterinburg Street Art Map | Карта</title>
     <link rel="stylesheet" href="./styles/main.css" />
-    <script
-      src="https://api-maps.yandex.ru/2.1/?apikey=f610c3a3-c352-4162-92e7-9607eceb10fb&lang=ru_RU"
-      type="text/javascript"
-    ></script>
+    <link rel="icon" href="./icons/ekb-logo.png" type="image/x-icon" />
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=f610c3a3-c352-4162-92e7-9607eceb10fb&lang=ru_RU"></script>
     <script src="./scripts/main.js" type="module" defer></script>
-    <style type="text/css">
-      .ymaps-2-1-79-inner-panes {
-        /* 
-        filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
-          saturate(140%); 
-        -ms-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
-          saturate(140%);
-        -webkit-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
-          saturate(140%);
-        -moz-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
-          saturate(140%);
-        -o-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
-          saturate(140%);  */
-
-        filter: brightness(100%) contrast(130%) saturate(130%);
-      }
-    </style>
+    <title>Ekaterinburg Street Art Map | Карта</title>
   </head>
-  <body style="height: 100%">
-    <div id="map" style="height: 100%"></div>
-    <script>
-      ymaps.ready(init);
-
-      function init() {
-        const map = new ymaps.Map("map", {
-          center: [56.838281, 60.603365],
-          zoom: 14,
-          controls: [],
-        });
-
-        var myPlacemark = new ymaps.Placemark([56.838281, 60.603365], {
-          balloonContentHeader: "Заголовок",
-          balloonContentBody: "Тело",
-          balloonContentFooter: "Футер",
-          hintContent: "Тест",
-        });
-
-        map.geoObjects.add(myPlacemark);
-
-        setMapLayer(map, "dark");
-      }
-
-      // Изменение темы карты
-      // --------------------------------------------------------
-      function setMapLayer(map, map_type) {
-        const MAP = "custom#" + map_type;
-        ymaps.layer.storage.add(MAP, function mapLayer() {
-          return new ymaps.Layer(
-            "https://core-renderer-tiles.maps.yandex.net/tiles?l=map" +
-              (map_type == "dark" ? "&theme=dark" : "") +
-              "&%c&%l"
-          );
-        });
-        ymaps.mapType.storage.add(MAP, new ymaps.MapType(map_type, [MAP]));
-        map.setType(MAP);
-      }
-    </script>
+  <body>
+    <button class="filter-button button active">Фильтры</button>
+    <button class="nav-button button"><</button>
+    <nav class="navigation">
+      <ul class="navigation__content">
+        <li class="navigation__item">
+          <a class="navigation__link link" href="#">О нас</a>
+        </li>
+        <li class="navigation__item">
+          <a class="navigation__link link" href="#">Добавить на карту</a>
+        </li>
+        <li class="navigation__item">
+          <a class="navigation__link link" href="#">Галерея работ</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="map" class="map-container"></div>
   </body>
 </html>
