@@ -8,31 +8,67 @@
     />
     <title>Ekaterinburg Street Art Map | Карта</title>
     <link rel="stylesheet" href="./styles/main.css" />
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=f610c3a3-c352-4162-92e7-9607eceb10fb&lang=ru_RU"
+      type="text/javascript"
+    ></script>
     <script src="./scripts/main.js" type="module" defer></script>
+    <style type="text/css">
+      .ymaps-2-1-79-inner-panes {
+        /* 
+        filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+          saturate(140%); 
+        -ms-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+          saturate(140%);
+        -webkit-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+          saturate(140%);
+        -moz-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+          saturate(140%);
+        -o-filter: brightness(80%) contrast(140%) hue-rotate(210deg) invert(100%)
+          saturate(140%);  */
+
+        filter: brightness(100%) contrast(130%) saturate(130%);
+      }
+    </style>
   </head>
   <body style="height: 100%">
-    <div id="mapId" style="height: 100%"></div>
+    <div id="map" style="height: 100%"></div>
     <script>
-      async function initMap() {
-        const element = document.getElementById("mapId");
+      ymaps.ready(init);
 
-        const { ColorScheme } = await google.maps.importLibrary("core");
+      function init() {
+        const map = new ymaps.Map("map", {
+          center: [56.838281, 60.603365],
+          zoom: 14,
+          controls: [],
+        });
 
-        const options = {
-          zoom: 15,
-          maxZoom: 20,
-          minZoom: 12,
-          center: { lat: 56.8375405, lng: 60.5950455 },
-          colorScheme: ColorScheme.DARK,
-        };
+        var myPlacemark = new ymaps.Placemark([56.838281, 60.603365], {
+          balloonContentHeader: "Заголовок",
+          balloonContentBody: "Тело",
+          balloonContentFooter: "Футер",
+          hintContent: "Тест",
+        });
 
-        const myMap = new google.maps.Map(element, options);
+        map.geoObjects.add(myPlacemark);
+
+        setMapLayer(map, "dark");
+      }
+
+      // Изменение темы карты
+      // --------------------------------------------------------
+      function setMapLayer(map, map_type) {
+        const MAP = "custom#" + map_type;
+        ymaps.layer.storage.add(MAP, function mapLayer() {
+          return new ymaps.Layer(
+            "https://core-renderer-tiles.maps.yandex.net/tiles?l=map" +
+              (map_type == "dark" ? "&theme=dark" : "") +
+              "&%c&%l"
+          );
+        });
+        ymaps.mapType.storage.add(MAP, new ymaps.MapType(map_type, [MAP]));
+        map.setType(MAP);
       }
     </script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQZ1GPW07tfz4gLLFy07pFVWBI_QNrgEA&callback=initMap"
-    ></script>
   </body>
 </html>
