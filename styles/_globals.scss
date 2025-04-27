@@ -3,6 +3,7 @@
 body {
   font-family: var(--font-family-base);
   height: 100%;
+  color: var(--color-white);
 }
 
 ::-webkit-scrollbar {
@@ -23,9 +24,14 @@ svg * {
 }
 
 :focus-visible {
-  outline: rem(2) solid green; // Изменить цвет после выбора цветовой гаммы
+  outline: rem(2) solid var(--color-active-gray);
   outline-offset: rem(4);
   transition-duration: 0s !important;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
 }
 
 .ymaps-2-1-79-inner-panes {
@@ -42,9 +48,4 @@ svg * {
     saturate(140%);  */
 
   filter: brightness(100%) contrast(120%) saturate(130%);
-}
-
-.map-container {
-  width: 100%;
-  height: 100%;
 }

@@ -22,3 +22,9 @@ $mobile-s: 480.98;
     }
   }
 }
+
+@mixin active {
+  &:active {
+    @content;
+  }
+}

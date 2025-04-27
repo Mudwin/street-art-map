@@ -31,7 +31,11 @@
     padding-inline: rem(10);
 
     @include hover {
-      color: gray;
+      color: var(--color-hover-gray);
+    }
+
+    @include active {
+      color: var(--test);
     }
   }
 }
