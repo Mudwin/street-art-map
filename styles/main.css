@@ -232,7 +232,6 @@ svg * {
   padding: 0.5rem 0.625rem;
   background-color: var(--color-light-gray);
   border: none;
-  margin: 1.25rem;
 }
 @media (any-hover: hover) {
   .button:hover {
@@ -252,11 +251,10 @@ svg * {
   top: 0;
   left: 0;
   font-weight: 500;
+  margin: 1.25rem;
 }
 
-.nav-button {
-  top: 0;
-  right: 0;
+.open-close-button {
   font-size: 1.5625rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -264,20 +262,14 @@ svg * {
   justify-content: center;
   align-items: center;
 }
-.nav-button.is-opened {
-  transform: rotateZ(180deg);
-}
 
 .navigation {
   position: absolute;
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: var(--color-gray-transparent);
-  border-radius: 1.25rem;
   height: 41.25rem;
   width: 9.375rem;
-  align-self: center;
   margin-top: 0.3125rem;
   margin-right: 0.3125rem;
   display: flex;
@@ -286,6 +278,14 @@ svg * {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.navigation__button {
+  top: 0;
+  right: 0;
+  margin: 1.25rem;
+}
+.navigation__button.is-opened {
+  transform: rotateZ(180deg);
 }
 .navigation__content {
   display: flex;
@@ -315,6 +315,63 @@ svg * {
 }
 .navigation.is-opened {
   transform: translateX(0rem);
+}
+
+.tile {
+  background-color: var(--color-gray-transparent);
+  border-radius: 1.25rem;
+}
+
+.filters {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  margin: 0.3125rem;
+  padding: 1.25rem;
+  padding-bottom: 3.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  max-width: 28.125rem;
+}
+.filters__button {
+  position: relative;
+  align-self: flex-end;
+}
+.filters__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.filters__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+}
+.filters__header {
+  font-size: 1.5625rem;
+  font-weight: 700;
+}
+.filters__categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.filters__categories-item {
+  display: flex;
+  align-items: center;
+  width: 12.5rem;
+  gap: 0.4375rem;
+}
+.filters__categories-item input {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.filters__categories-item p {
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=main.css.map */

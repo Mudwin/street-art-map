@@ -5,11 +5,8 @@
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: var(--color-gray-transparent);
-  border-radius: rem(20);
   height: rem(660);
   width: rem(150);
-  align-self: center;
   margin-top: rem(5);
   margin-right: rem(5);
   display: flex;
@@ -17,6 +14,16 @@
   transform: translateX(rem(200));
 
   @include flex-center;
+
+  &__button {
+    top: 0;
+    right: 0;
+    margin: rem(20);
+
+    &.is-opened {
+      transform: rotateZ(180deg);
+    }
+  }
 
   &__content {
     display: flex;

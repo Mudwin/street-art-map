@@ -8,7 +8,6 @@
   padding: rem(8) rem(10);
   background-color: var(--color-light-gray);
   border: none;
-  margin: rem(20);
 
   @include hover {
     background-color: var(--color-hover-gray);
@@ -23,17 +22,12 @@
   top: 0;
   left: 0;
   font-weight: 500;
+  margin: rem(20);
 }
 
-.nav-button {
-  top: 0;
-  right: 0;
+.open-close-button {
   font-size: rem(25);
 
   @include square(#{rem(40)});
   @include flex-center;
-
-  &.is-opened {
-    transform: rotateZ(180deg);
-  }
 }

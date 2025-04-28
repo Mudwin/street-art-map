@@ -1,0 +1,6 @@
+@use "../helpers" as *;
+
+.tile {
+  background-color: var(--color-gray-transparent);
+  border-radius: rem(20);
+}

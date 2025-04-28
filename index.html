@@ -13,11 +13,93 @@
     <title>Ekaterinburg Street Art Map | Карта</title>
   </head>
   <body>
-    <button class="filter-button button">Фильтры</button>
-    <button class="nav-button button is-closed" data-js-open-button>
+    <button class="filter-button button visually-hidden">Фильтры</button>
+    <div class="filters tile">
+      <button class="open-close-button button filters__button">
+        <span>🞪</span>
+      </button>
+      <div class="filters__content">
+        <div class="filters__section">
+          <div class="filters__header">Районы</div>
+          <div class="filters__categories">
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Академический</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Верх-Исетский</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Железнодорожный</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Кировский</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Ленинский</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Октябрьский</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Орджоникидзевский</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Чкаловский</p>
+            </div>
+          </div>
+        </div>
+        <div class="filters__section">
+          <!-- Мб добавить стилизацию шрифтов -->
+          <div class="filters__header">Фестивали</div>
+          <div class="filters__categories">
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Стенограффия</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Карт-Бланш</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>ЧО</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>PublicArtFestival</p>
+            </div>
+          </div>
+        </div>
+        <div class="filters__section">
+          <div class="filters__header">Статус работы</div>
+          <div class="filters__categories">
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Существующие</p>
+            </div>
+            <div class="filters__categories-item">
+              <input type="checkbox" class="checkbox" />
+              <p>Закрашенные</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="navigation__button button open-close-button is-closed"
+      data-js-open-button
+    >
       <span><</span>
     </button>
-    <nav class="navigation is-closed" data-js-navigation>
+    <nav class="navigation tile is-closed" data-js-navigation>
       <ul class="navigation__content">
         <li class="navigation__item">
           <a class="navigation__link link" href="./pages/about.html">О нас</a>
