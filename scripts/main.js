@@ -1,3 +1,7 @@
+import Navigation from "./Navigation.js";
+
+new Navigation();
+
 // Подключение карты
 // --------------------------------------------------------
 ymaps.ready(init);

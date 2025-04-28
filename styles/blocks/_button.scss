@@ -32,4 +32,8 @@
 
   @include square(#{rem(40)});
   @include flex-center;
+
+  &.is-opened {
+    transform: rotateZ(180deg);
+  }
 }

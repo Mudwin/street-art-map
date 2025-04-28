@@ -160,7 +160,8 @@ svg * {
   --color-hover-gray: rgb(120, 133, 139);
   --color-active-gray: rgb(187, 187, 187);
   --font-family-base: "Rubik", sans-serif;
-  --transition-duration: 0.2s;
+  --transition-duration-short: 0.2s;
+  --transition-duration-medium: 0.5s;
 }
 
 .visually-hidden {
@@ -180,6 +181,7 @@ body {
   font-family: var(--font-family-base);
   height: 100%;
   color: var(--color-white);
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -193,7 +195,7 @@ input,
 textarea,
 select,
 svg * {
-  transition-duration: var(--transition-duration);
+  transition-duration: var(--transition-duration-short);
 }
 
 :focus-visible {
@@ -262,6 +264,9 @@ svg * {
   justify-content: center;
   align-items: center;
 }
+.nav-button.is-opened {
+  transform: rotateZ(180deg);
+}
 
 .navigation {
   position: absolute;
@@ -276,6 +281,8 @@ svg * {
   margin-top: 0.3125rem;
   margin-right: 0.3125rem;
   display: flex;
+  transition-duration: var(--transition-duration-medium);
+  transform: translateX(12.5rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,7 +291,7 @@ svg * {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8.125rem;
+  gap: 8.75rem;
 }
 .navigation__link {
   text-decoration: none;
@@ -305,6 +312,9 @@ svg * {
 }
 .navigation__link:active {
   color: var(--test);
+}
+.navigation.is-opened {
+  transform: translateX(0rem);
 }
 
 /*# sourceMappingURL=main.css.map */

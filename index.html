@@ -13,18 +13,24 @@
     <title>Ekaterinburg Street Art Map | Карта</title>
   </head>
   <body>
-    <button class="filter-button button active">Фильтры</button>
-    <button class="nav-button button"><</button>
-    <nav class="navigation">
+    <button class="filter-button button">Фильтры</button>
+    <button class="nav-button button is-closed" data-js-open-button>
+      <span><</span>
+    </button>
+    <nav class="navigation is-closed" data-js-navigation>
       <ul class="navigation__content">
         <li class="navigation__item">
-          <a class="navigation__link link" href="#">О нас</a>
+          <a class="navigation__link link" href="./pages/about.html">О нас</a>
         </li>
         <li class="navigation__item">
-          <a class="navigation__link link" href="#">Добавить на карту</a>
+          <a class="navigation__link link" href="./pages/form.html">
+            Добавить на карту
+          </a>
         </li>
         <li class="navigation__item">
-          <a class="navigation__link link" href="#">Галерея работ</a>
+          <a class="navigation__link link" href="./pages/gallery.html">
+            Галерея работ
+          </a>
         </li>
       </ul>
     </nav>

@@ -13,6 +13,8 @@
   margin-top: rem(5);
   margin-right: rem(5);
   display: flex;
+  transition-duration: var(--transition-duration-medium);
+  transform: translateX(rem(200));
 
   @include flex-center;
 
@@ -20,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: rem(130);
+    gap: rem(140);
   }
 
   &__link {
@@ -37,5 +39,9 @@
     @include active {
       color: var(--test);
     }
+  }
+
+  &.is-opened {
+    transform: translateX(rem(0));
   }
 }
