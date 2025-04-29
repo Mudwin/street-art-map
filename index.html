@@ -13,9 +13,14 @@
     <title>Ekaterinburg Street Art Map | Карта</title>
   </head>
   <body>
-    <button class="filter-button button visually-hidden">Фильтры</button>
-    <div class="filters tile">
-      <button class="open-close-button button filters__button">
+    <button class="filters__open-button button" data-js-filters-open-button>
+      Фильтры
+    </button>
+    <div class="filters tile is-closed" data-js-filters>
+      <button
+        class="open-close-button button filters__close-button"
+        data-js-filters-close-button
+      >
         <span>🞪</span>
       </button>
       <div class="filters__content">

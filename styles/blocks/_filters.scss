@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   margin: rem(5);
   padding: rem(20);
   padding-bottom: rem(50);
@@ -12,10 +12,34 @@
   flex-direction: column;
   gap: rem(0);
   max-width: rem(450);
+  transform: translateX(rem(0));
+  transition-duration: var(--transition-duration-short);
 
-  &__button {
+  &.is-closed {
+    transform: translateX(rem(-500));
+
+    .filters__close-button {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  &__open-button {
+    top: 0;
+    left: 0;
+    margin: rem(20);
+    transform: translateY(rem(0));
+    transition-duration: var(--transition-duration-short);
+
+    &.is-opened {
+      @include visually-hidden;
+      transform: translateY(rem(-100));
+    }
+  }
+
+  &__close-button {
     position: relative;
     align-self: flex-end;
+    transition-duration: var(--transition-duration-medium);
   }
 
   &__content {
@@ -46,6 +70,7 @@
       align-items: center;
       width: rem(200);
       gap: rem(7);
+      transition-duration: var(--transition-duration-short);
 
       & input {
         @include square(rem(20));
@@ -54,6 +79,10 @@
       & p {
         font-size: rem(14);
         font-weight: 500;
+      }
+
+      @include hover {
+        color: var(--color-hover-gray);
       }
     }
   }

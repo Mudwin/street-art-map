@@ -14,8 +14,6 @@ class Navigation {
     this.navigationMenuElement.classList.toggle(this.stateClasses.isClosed);
     this.openButtonElement.classList.toggle(this.stateClasses.isOpened);
     this.openButtonElement.classList.toggle(this.stateClasses.isClosed);
-
-    console.log(this.openButtonElement.classList);
   };
 
   bindEvents() {

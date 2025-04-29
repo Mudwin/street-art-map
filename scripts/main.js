@@ -1,6 +1,8 @@
 import Navigation from "./Navigation.js";
+import Filters from "./Filters.js";
 
 new Navigation();
+new Filters();
 
 // Подключение карты
 // --------------------------------------------------------
