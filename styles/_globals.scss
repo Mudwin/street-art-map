@@ -5,6 +5,11 @@ body {
   height: 100%;
   color: var(--color-white);
   overflow-x: hidden;
+  background-color: var(--main-map-color);
+  background-image: url("../icons/loading.gif");
+  background-size: rem(60);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 ::-webkit-scrollbar {

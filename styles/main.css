@@ -159,6 +159,7 @@ svg * {
   --color-light-gray: rgb(181, 184, 177);
   --color-hover-gray: rgb(120, 133, 139);
   --color-active-gray: rgb(187, 187, 187);
+  --main-map-color: rgb(41, 51, 69);
   --font-family-base: "Rubik", sans-serif;
   --transition-duration-short: 0.2s;
   --transition-duration-medium: 0.5s;
@@ -182,6 +183,11 @@ body {
   height: 100%;
   color: var(--color-white);
   overflow-x: hidden;
+  background-color: var(--main-map-color);
+  background-image: url("../icons/loading.gif");
+  background-size: 3.75rem;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 ::-webkit-scrollbar {
@@ -379,7 +385,7 @@ svg * {
   height: 1.25rem;
 }
 .filters__categories-item p {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 500;
 }
 @media (any-hover: hover) {

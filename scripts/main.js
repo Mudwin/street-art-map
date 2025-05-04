@@ -18,6 +18,7 @@ async function initMap() {
       zoom: 15,
     },
     zoomRange: { min: 12, max: 20 },
+    mode: "vector",
   });
 
   // Добавляем слой для отображения схематической карты
