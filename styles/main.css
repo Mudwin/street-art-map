@@ -194,6 +194,24 @@ body {
   width: 0rem;
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+@media (any-hover: hover) {
+  a:hover {
+    color: var(--color-hover-gray);
+  }
+}
+@media (any-hover: none) {
+  a:active {
+    color: var(--color-hover-gray);
+  }
+}
+a:active {
+  color: var(--test);
+}
+
 a,
 button,
 label,
@@ -279,24 +297,9 @@ svg * {
   gap: 8.75rem;
 }
 .navigation__link {
-  text-decoration: none;
   font-size: 1.25rem;
   text-align: center;
-  color: var(--color-white);
   padding-inline: 0.625rem;
-}
-@media (any-hover: hover) {
-  .navigation__link:hover {
-    color: var(--color-hover-gray);
-  }
-}
-@media (any-hover: none) {
-  .navigation__link:active {
-    color: var(--color-hover-gray);
-  }
-}
-.navigation__link:active {
-  color: var(--test);
 }
 .navigation.is-opened {
   transform: translateX(0rem);

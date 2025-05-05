@@ -17,7 +17,19 @@ body {
 }
 
 // Добавить иерархию заголовков + глобальные стили для них
-// Выделить глобальные стили для ссылок
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+
+  @include hover {
+    color: var(--color-hover-gray);
+  }
+
+  @include active {
+    color: var(--test);
+  }
+}
 
 a,
 button,

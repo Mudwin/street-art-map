@@ -33,19 +33,9 @@
   }
 
   &__link {
-    text-decoration: none;
     font-size: rem(20);
     text-align: center;
-    color: var(--color-white);
     padding-inline: rem(10);
-
-    @include hover {
-      color: var(--color-hover-gray);
-    }
-
-    @include active {
-      color: var(--test);
-    }
   }
 
   &.is-opened {
