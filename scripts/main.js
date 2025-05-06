@@ -9,7 +9,7 @@ initMap();
 async function initMap() {
   await ymaps3.ready;
 
-  const { YMap, YMapDefaultSchemeLayer } = ymaps3;
+  const { YMap, YMapDefaultSchemeLayer, YMapListener } = ymaps3;
 
   // Иницилиазируем карту
   const map = new YMap(document.getElementById("map"), {
@@ -107,4 +107,17 @@ async function initMap() {
       ],
     })
   );
+
+  // const clickCallback = () => alert("О, событие!");
+  // const mouseMoveCallback = () => console.log("Я двигаю мышью...");
+
+  // // Создание объекта-слушателя.
+  // const mapListener = new YMapListener({
+  //   layer: "any",
+  //   onClick: clickCallback,
+  //   onMouseMove: mouseMoveCallback,
+  // });
+
+  // // Добавление слушателя на карту.
+  // map.addChild(mapListener);
 }

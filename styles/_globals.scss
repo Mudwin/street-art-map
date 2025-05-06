@@ -18,7 +18,7 @@ body {
 
 // Добавить иерархию заголовков + глобальные стили для них
 
-a {
+a:not(.button) {
   text-decoration: none;
   color: var(--color-white);
 
@@ -27,7 +27,7 @@ a {
   }
 
   @include active {
-    color: var(--test);
+    color: var(--color-active-gray);
   }
 }
 
@@ -50,4 +50,8 @@ svg * {
 .map-container {
   width: 100%;
   height: 100%;
+}
+
+.ymaps3x0--map-copyrights {
+  visibility: hidden;
 }

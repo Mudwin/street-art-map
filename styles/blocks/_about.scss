@@ -1,0 +1,41 @@
+@use "../helpers" as *;
+
+.about {
+  background-image: none;
+  padding-inline: rem(200);
+  padding-block: rem(30);
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: rem(60);
+  }
+
+  &__back-button {
+    top: 0;
+    right: 0;
+    width: rem(120);
+    text-decoration: none;
+    text-align: center;
+
+    @include flex-center;
+  }
+
+  &__title {
+    font-size: rem(50);
+    text-align: center;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+    padding-inline: rem(120);
+  }
+
+  &__text {
+    font-size: rem(20);
+    text-align: center;
+  }
+}
