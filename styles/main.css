@@ -272,6 +272,15 @@ svg * {
   align-items: center;
 }
 
+.main-page-button {
+  width: 7.5rem;
+  height: 2.5rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navigation {
   position: absolute;
   z-index: 1;
@@ -423,12 +432,6 @@ svg * {
 .about__back-button {
   top: 0;
   right: 0;
-  width: 7.5rem;
-  text-decoration: none;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .about__title {
   font-size: 3.125rem;
@@ -443,6 +446,82 @@ svg * {
 .about__text {
   font-size: 1.25rem;
   text-align: center;
+}
+
+.form {
+  background-image: none;
+  padding-inline: 12.5rem;
+  padding-block: 1.875rem;
+}
+.form__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+}
+.form__back-button {
+  top: 0;
+  right: 0;
+}
+.form__title {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.form__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.form__element {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+}
+.form__label {
+  font-size: 1.125rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+.form__label span {
+  color: rgb(237, 57, 57);
+}
+.form__text-field {
+  font-size: 0.9375rem;
+  border: none;
+  background-color: var(--color-white);
+  border-radius: 1.25rem;
+  width: 28.125rem;
+  height: 3.125rem;
+  padding: 0.625rem;
+}
+.form__file-field {
+  cursor: pointer;
+  width: 18.75rem;
+  font-weight: 300;
+}
+.form__file-field::file-selector-button {
+  padding: 0.625rem;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 0.625rem;
+  margin-right: 0.9375rem;
+}
+.form__textarea {
+  border: none;
+  border-radius: 1.25rem;
+  resize: none;
+  font-size: 0.9375rem;
+  padding: 0.9375rem;
+  width: 46.875rem;
+  height: 12.5rem;
+  background-color: var(--color-white);
+}
+.form__button {
+  position: relative;
+  align-self: flex-end;
+  width: 9.375rem;
+  height: 3.125rem;
+  margin-top: -3.125rem;
 }
 
 /*# sourceMappingURL=main.css.map */

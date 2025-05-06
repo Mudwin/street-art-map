@@ -27,3 +27,11 @@
   @include square(#{rem(40)});
   @include flex-center;
 }
+
+.main-page-button {
+  width: rem(120);
+  height: rem(40);
+  text-decoration: none;
+
+  @include flex-center;
+}

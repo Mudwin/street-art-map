@@ -1,0 +1,118 @@
+@use "../helpers" as *;
+
+.form {
+  background-image: none;
+  padding-inline: rem(200);
+  padding-block: rem(30);
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: rem(50);
+  }
+
+  &__back-button {
+    top: 0;
+    right: 0;
+  }
+
+  &__title {
+    font-size: rem(40);
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+  }
+
+  &__label {
+    font-size: rem(18);
+    font-weight: 500;
+    align-self: flex-start;
+  }
+
+  &__label span {
+    color: rgb(237, 57, 57);
+  }
+
+  &__text-field {
+    font-size: rem(15);
+    border: none;
+    background-color: var(--color-white);
+    border-radius: rem(20);
+    width: rem(450);
+    height: rem(50);
+    padding: rem(10);
+
+    @include hover {
+    }
+
+    @include active {
+    }
+
+    @include focus {
+    }
+  }
+
+  &__file-field {
+    cursor: pointer;
+    width: rem(300);
+    font-weight: 300;
+
+    &::file-selector-button {
+      padding: rem(10);
+      background-color: var(--color-white);
+      border: none;
+      border-radius: rem(10);
+      margin-right: rem(15);
+    }
+
+    @include hover {
+    }
+
+    @include active {
+    }
+
+    @include focus {
+    }
+  }
+
+  &__textarea {
+    border: none;
+    border-radius: rem(20);
+    resize: none;
+    font-size: rem(15);
+    padding: rem(15);
+    width: rem(750);
+    height: rem(200);
+    background-color: var(--color-white);
+
+    @include hover {
+    }
+
+    @include active {
+    }
+
+    @include focus {
+    }
+  }
+
+  &__button {
+    position: relative;
+    align-self: flex-end;
+    width: rem(150);
+    height: rem(50);
+    margin-top: rem(-50);
+  }
+
+  // Выделить в отдельные блоки
+}

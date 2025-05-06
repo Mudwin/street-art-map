@@ -15,11 +15,6 @@
   &__back-button {
     top: 0;
     right: 0;
-    width: rem(120);
-    text-decoration: none;
-    text-align: center;
-
-    @include flex-center;
   }
 
   &__title {

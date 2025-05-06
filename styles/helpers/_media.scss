@@ -28,3 +28,9 @@ $mobile-s: 480.98;
     @content;
   }
 }
+
+@mixin focus {
+  &:focus {
+    @content;
+  }
+}
