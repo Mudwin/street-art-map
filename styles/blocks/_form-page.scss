@@ -1,25 +1,11 @@
 @use "../helpers" as *;
 
 .form {
-  background-image: none;
-  padding-inline: rem(200);
-  padding-block: rem(30);
-
   &__content {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: rem(50);
-  }
-
-  &__back-button {
-    top: 0;
-    right: 0;
-  }
-
-  &__title {
-    font-size: rem(40);
-    text-align: center;
   }
 
   &__body {
@@ -80,6 +66,10 @@
     }
 
     @include active {
+      outline: rem(2) solid var(--color-active-gray);
+      outline-offset: rem(8);
+      border-radius: rem(10);
+      transition-duration: 0.1s;
     }
 
     @include focus {
@@ -101,9 +91,6 @@
 
     @include active {
     }
-
-    @include focus {
-    }
   }
 
   &__button {
@@ -113,6 +100,4 @@
     height: rem(50);
     margin-top: rem(-50);
   }
-
-  // Выделить в отдельные блоки
 }

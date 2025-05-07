@@ -423,20 +423,6 @@ svg * {
   padding-inline: 12.5rem;
   padding-block: 1.875rem;
 }
-.about__content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 3.75rem;
-}
-.about__back-button {
-  top: 0;
-  right: 0;
-}
-.about__title {
-  font-size: 3.125rem;
-  text-align: center;
-}
 .about__info {
   display: flex;
   flex-direction: column;
@@ -448,24 +434,11 @@ svg * {
   text-align: center;
 }
 
-.form {
-  background-image: none;
-  padding-inline: 12.5rem;
-  padding-block: 1.875rem;
-}
 .form__content {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 3.125rem;
-}
-.form__back-button {
-  top: 0;
-  right: 0;
-}
-.form__title {
-  font-size: 2.5rem;
-  text-align: center;
 }
 .form__body {
   display: flex;
@@ -506,6 +479,12 @@ svg * {
   border-radius: 0.625rem;
   margin-right: 0.9375rem;
 }
+.form__file-field:active {
+  outline: 0.125rem solid var(--color-active-gray);
+  outline-offset: 0.5rem;
+  border-radius: 0.625rem;
+  transition-duration: 0.1s;
+}
 .form__textarea {
   border: none;
   border-radius: 1.25rem;
@@ -522,6 +501,26 @@ svg * {
   width: 9.375rem;
   height: 3.125rem;
   margin-top: -3.125rem;
+}
+
+.page {
+  background-image: none;
+  padding-inline: 12.5rem;
+  padding-block: 1.875rem;
+}
+.page__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+}
+.page__back-button {
+  top: 0;
+  right: 0;
+}
+.page__title {
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */
