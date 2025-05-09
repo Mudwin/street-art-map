@@ -1,0 +1,54 @@
+@use "../helpers" as *;
+
+.form {
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: rem(50);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+  }
+
+  &__label {
+    font-size: rem(18);
+    font-weight: 500;
+    align-self: flex-start;
+  }
+
+  &__label span {
+    color: rgb(237, 57, 57);
+  }
+
+  &__text-field {
+    width: rem(450);
+    height: rem(50);
+  }
+
+  &__file-field {
+    width: rem(300);
+  }
+
+  &__textarea {
+    width: rem(750);
+    height: rem(200);
+  }
+
+  &__button {
+    position: relative;
+    align-self: flex-end;
+    width: rem(150);
+    height: rem(50);
+    margin-top: rem(-50);
+  }
+}

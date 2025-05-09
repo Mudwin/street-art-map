@@ -459,41 +459,15 @@ svg * {
   color: rgb(237, 57, 57);
 }
 .form__text-field {
-  font-size: 0.9375rem;
-  border: none;
-  background-color: var(--color-white);
-  border-radius: 1.25rem;
   width: 28.125rem;
   height: 3.125rem;
-  padding: 0.625rem;
 }
 .form__file-field {
-  cursor: pointer;
   width: 18.75rem;
-  font-weight: 300;
-}
-.form__file-field::file-selector-button {
-  padding: 0.625rem;
-  background-color: var(--color-white);
-  border: none;
-  border-radius: 0.625rem;
-  margin-right: 0.9375rem;
-}
-.form__file-field:active {
-  outline: 0.125rem solid var(--color-active-gray);
-  outline-offset: 0.5rem;
-  border-radius: 0.625rem;
-  transition-duration: 0.1s;
 }
 .form__textarea {
-  border: none;
-  border-radius: 1.25rem;
-  resize: none;
-  font-size: 0.9375rem;
-  padding: 0.9375rem;
   width: 46.875rem;
   height: 12.5rem;
-  background-color: var(--color-white);
 }
 .form__button {
   position: relative;
@@ -521,6 +495,56 @@ svg * {
 .page__title {
   font-size: 2.5rem;
   text-align: center;
+}
+
+.gallery .page__back-button {
+  position: fixed;
+  top: 30px;
+  right: 200px;
+}
+.gallery__container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.gallery__row {
+  display: flex;
+  gap: 0.625rem;
+}
+.gallery__item {
+  width: 12.5rem;
+  height: 12.5rem;
+  background-color: var(--color-white);
+  border-radius: 1.25rem;
+  border: 0.1875rem solid var(--color-white);
+}
+
+.text-field {
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 1.25rem;
+  font-size: 0.9375rem;
+  padding: 0.9375rem;
+  resize: none;
+}
+
+.file-field {
+  cursor: pointer;
+  font-weight: 300;
+}
+.file-field::file-selector-button {
+  padding: 0.625rem;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 0.625rem;
+  margin-right: 0.9375rem;
+}
+.file-field:active {
+  outline: 0.125rem solid var(--color-active-gray);
+  outline-offset: 0.5rem;
+  border-radius: 0.625rem;
+  transition-duration: 0.1s;
 }
 
 /*# sourceMappingURL=main.css.map */

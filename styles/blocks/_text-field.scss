@@ -1,0 +1,10 @@
+@use "../helpers" as *;
+
+.text-field {
+  background-color: var(--color-white);
+  border: none;
+  border-radius: rem(20);
+  font-size: rem(15);
+  padding: rem(15);
+  resize: none;
+}

@@ -1,0 +1,21 @@
+@use "../helpers" as *;
+
+.file-field {
+  cursor: pointer;
+  font-weight: 300;
+
+  &::file-selector-button {
+    padding: rem(10);
+    background-color: var(--color-white);
+    border: none;
+    border-radius: rem(10);
+    margin-right: rem(15);
+  }
+
+  @include active {
+    outline: rem(2) solid var(--color-active-gray);
+    outline-offset: rem(8);
+    border-radius: rem(10);
+    transition-duration: 0.1s;
+  }
+}

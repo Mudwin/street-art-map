@@ -1,0 +1,29 @@
+@use "../helpers" as *;
+
+.gallery {
+  & .page__back-button {
+    position: fixed;
+    top: 30px;
+    right: 200px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+
+  &__row {
+    display: flex;
+    gap: rem(10);
+  }
+
+  &__item {
+    @include square(rem(200));
+
+    background-color: var(--color-white);
+    border-radius: rem(20);
+    border: rem(3) solid var(--color-white);
+  }
+}
