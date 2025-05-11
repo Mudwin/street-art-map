@@ -405,6 +405,7 @@ svg * {
   cursor: pointer;
 }
 .filters__categories-item label {
+  border: 1px solid red;
   font-size: 0.9375rem;
   font-weight: 500;
   display: flex;
