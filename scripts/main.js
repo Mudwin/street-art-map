@@ -9,9 +9,15 @@ initMap();
 async function initMap() {
   await ymaps3.ready;
 
-  const { YMap, YMapDefaultSchemeLayer, YMapListener } = ymaps3;
+  const {
+    YMap,
+    YMapDefaultSchemeLayer,
+    // YMapDefaultFeaturesLayer,
+    YMapListener,
+    // YMapMarker,
+  } = ymaps3;
 
-  // Иницилиазируем карту
+  // Инициализация карты
   const map = new YMap(document.getElementById("map"), {
     location: {
       center: [60.603436, 56.838353],
@@ -21,8 +27,7 @@ async function initMap() {
     mode: "vector",
   });
 
-  // Добавляем слой для отображения схематической карты
-  map.addChild(new YMapDefaultSchemeLayer());
+  // Слой для отображения схематической карты
   map.addChild(
     new YMapDefaultSchemeLayer({
       theme: "dark",
@@ -108,16 +113,25 @@ async function initMap() {
     })
   );
 
-  // const clickCallback = () => alert("О, событие!");
-  // const mouseMoveCallback = () => console.log("Я двигаю мышью...");
+  // --------------------------------------------------------------------
 
-  // // Создание объекта-слушателя.
-  // const mapListener = new YMapListener({
-  //   layer: "any",
-  //   onClick: clickCallback,
-  //   onMouseMove: mouseMoveCallback,
-  // });
+  const clickCallback = (object, event) => {
+    try {
+      if (object.type == "hotspot") {
+        console.log("it is a hotspot");
+      } else {
+        console.log("is is something else???");
+      }
+    } catch (e) {
+      console.log("it is an inactive area");
+    }
+  };
 
-  // // Добавление слушателя на карту.
-  // map.addChild(mapListener);
+  // Объект-слушатель
+  const mapListener = new YMapListener({
+    layer: "any",
+    onClick: clickCallback,
+  });
+
+  map.addChild(mapListener);
 }

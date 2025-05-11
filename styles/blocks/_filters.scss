@@ -63,7 +63,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: rem(8);
+    gap: rem(10);
 
     &-item {
       display: flex;
@@ -74,11 +74,14 @@
 
       & input {
         @include square(rem(20));
+        cursor: pointer;
       }
 
-      & p {
+      & label {
         font-size: rem(15);
         font-weight: 500;
+        display: flex;
+        flex-grow: 1;
       }
 
       @include hover {
