@@ -405,11 +405,13 @@ svg * {
   cursor: pointer;
 }
 .filters__categories-item label {
-  border: 1px solid red;
   font-size: 0.9375rem;
   font-weight: 500;
   display: flex;
   flex-grow: 1;
+}
+.filters__categories-item label:active {
+  color: var(--color-active-gray);
 }
 @media (any-hover: hover) {
   .filters__categories-item:hover {

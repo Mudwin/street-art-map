@@ -78,11 +78,14 @@
       }
 
       & label {
-        border: 1px solid red;
         font-size: rem(15);
         font-weight: 500;
         display: flex;
         flex-grow: 1;
+
+        @include active {
+          color: var(--color-active-gray);
+        }
       }
 
       @include hover {
