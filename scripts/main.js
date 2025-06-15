@@ -1,5 +1,74 @@
 import Navigation from "./Navigation.js";
 import Filters from "./Filters.js";
+import { db } from "./firebase.js";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+
+let map;
+let markers = [];
+
+async function loadArtObjects() {
+  try {
+    const q = query(
+      collection(db, "artObjects"),
+      where("isApproved", "==", true)
+    );
+
+    const snapshot = await getDocs(q);
+
+    snapshot.forEach((doc) => {
+      const art = { id: doc.id, ...doc.data() };
+      createMarker(art);
+    });
+  } catch (error) {
+    console.error("Ошибка загрузки объектов:", error);
+    alert("Не удалось загрузить данные с карты :(");
+  }
+}
+
+function createMarker(art) {
+  const markerElement = createMarkerElement();
+  const marker = new ymaps3.YMapMarker(
+    {
+      coordinates: [art.coords._long, art.coords._lat],
+    },
+    markerElement
+  );
+
+  markerElement.addEventListener("click", () => {
+    openSidePanel(art);
+  });
+
+  map.addChild(marker);
+  markers.push(marker);
+}
+
+function createMarkerElement() {
+  const markerContainerElement = document.createElement("div");
+  markerContainerElement.classList.add("marker-container");
+
+  const markerElement = document.createElement("div");
+  markerElement.classList.add("marker");
+
+  const markerImage = document.createElement("img");
+  markerImage.src = "./icons/pin.svg";
+  markerImage.classList.add("image");
+  markerImage.alt = "Маркер";
+
+  markerElement.appendChild(markerImage);
+  markerContainerElement.appendChild(markerElement);
+
+  return markerContainerElement;
+}
+
+function openSidePanel(art) {
+  console.log("test", art.title);
+  console.log(art.coords);
+}
 
 new Navigation();
 new Filters();
@@ -12,13 +81,13 @@ async function initMap() {
   const {
     YMap,
     YMapDefaultSchemeLayer,
-    // YMapDefaultFeaturesLayer,
+    YMapDefaultFeaturesLayer,
     YMapListener,
-    // YMapMarker,
+    YMapMarker,
   } = ymaps3;
 
   // Инициализация карты
-  const map = new YMap(document.getElementById("map"), {
+  map = new YMap(document.getElementById("map"), {
     location: {
       center: [60.603436, 56.838353],
       zoom: 15,
@@ -112,6 +181,10 @@ async function initMap() {
       ],
     })
   );
+
+  map.addChild(new YMapDefaultFeaturesLayer({}));
+
+  loadArtObjects();
 
   // --------------------------------------------------------------------
 

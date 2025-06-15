@@ -15,3 +15,18 @@
 @use "blocks/gallery";
 @use "blocks/text-field";
 @use "blocks/file-field";
+
+.marker-container {
+  position: absolute;
+  border: 1px solid white;
+  transform: translateX(-30%) translateY(-100%);
+}
+
+.marker {
+  cursor: pointer;
+  overflow: hidden;
+  width: 32px;
+  display: flex;
+  height: 32px;
+  transition: border-width 0.3s linear;
+}

@@ -553,4 +553,19 @@ svg * {
   transition-duration: 0.1s;
 }
 
+.marker-container {
+  position: absolute;
+  border: 1px solid white;
+  transform: translateX(-30%) translateY(-100%);
+}
+
+.marker {
+  cursor: pointer;
+  overflow: hidden;
+  width: 32px;
+  display: flex;
+  height: 32px;
+  transition: border-width 0.3s linear;
+}
+
 /*# sourceMappingURL=main.css.map */
