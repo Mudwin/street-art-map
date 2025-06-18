@@ -14,6 +14,7 @@
 
   &.is-closed {
     @include visually-hidden;
+    display: none;
   }
 
   &__button {
@@ -26,9 +27,6 @@
     border-radius: rem(20);
     background-color: var(--color-white);
     margin-bottom: rem(10);
-  }
-
-  &__img img {
   }
 
   &__title {

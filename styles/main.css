@@ -574,6 +574,7 @@ svg * {
   clip-path: inset(100%) !important;
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
+  display: none;
 }
 .card__button {
   top: 1rem;
