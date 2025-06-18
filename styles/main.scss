@@ -23,6 +23,10 @@
   transform: translateX(-30%) translateY(-100%);
 }
 
+.marker-container[hidden] {
+  display: none !important;
+}
+
 .marker {
   cursor: pointer;
   overflow: hidden;

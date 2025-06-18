@@ -9,13 +9,14 @@
   top: rem(8);
   left: rem(8);
   overflow-y: scroll;
-  // transform: translateX(rem(0));
+  transform: translateX(rem(0));
+  transition-duration: var(--transition-duration-short);
 
   // добавить кастомный скролл-бар
 
   &.is-closed {
     @include visually-hidden;
-    // transform: translateX(rem(-400));
+    transform: translateX(rem(-400));
   }
 
   &__button {

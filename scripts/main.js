@@ -10,6 +10,11 @@ import {
 
 let map;
 let markers = [];
+const filters = {
+  districts: new Set(),
+  festivals: new Set(),
+  status: "Существует",
+};
 
 async function loadArtObjects() {
   try {
@@ -19,32 +24,18 @@ async function loadArtObjects() {
     );
 
     const snapshot = await getDocs(q);
+    clearMarkers();
 
     snapshot.forEach((doc) => {
       const art = { id: doc.id, ...doc.data() };
       createMarker(art);
     });
+
+    initFilters();
   } catch (error) {
     console.error("Ошибка загрузки объектов:", error);
     alert("Не удалось загрузить данные с карты :(");
   }
-}
-
-function createMarker(art) {
-  const markerElement = createMarkerElement();
-  const marker = new ymaps3.YMapMarker(
-    {
-      coordinates: [art.coords._long, art.coords._lat],
-    },
-    markerElement
-  );
-
-  markerElement.addEventListener("click", () => {
-    openSidePanel(art);
-  });
-
-  map.addChild(marker);
-  markers.push(marker);
 }
 
 function createMarkerElement() {
@@ -63,6 +54,128 @@ function createMarkerElement() {
   markerContainerElement.appendChild(markerElement);
 
   return markerContainerElement;
+}
+
+function createMarker(art) {
+  const markerElement = createMarkerElement();
+  const marker = new ymaps3.YMapMarker(
+    {
+      coordinates: [art.coords._long, art.coords._lat],
+    },
+    markerElement
+  );
+
+  markerElement.addEventListener("click", () => {
+    openSidePanel(art);
+  });
+
+  const markerData = {
+    marker,
+    element: markerElement,
+    art,
+  };
+
+  map.addChild(marker);
+  markers.push(markerData);
+
+  return markerData;
+}
+
+function initFilters() {
+  document
+    .querySelectorAll('input[type="checkbox"]:checked')
+    .forEach((checkbox) => {
+      updateFilterSet(checkbox.name, checkbox.value, true);
+    });
+
+  document
+    .querySelectorAll('.filters__content input[type="checkbox"]')
+    .forEach((checkbox) => {
+      checkbox.addEventListener("change", handleFilterChange);
+    });
+
+  applyFilters();
+}
+
+function updateFilterSet(filterName, value, isChecked) {
+  switch (filterName) {
+    case "district":
+      if (isChecked) {
+        filters.districts.add(value);
+      } else {
+        filters.districts.delete(value);
+      }
+      break;
+
+    case "festival":
+      if (isChecked) {
+        filters.festivals.add(value);
+      } else {
+        filters.festivals.delete(value);
+      }
+      break;
+
+    case "status":
+      if (isChecked) filters.status = value;
+      break;
+  }
+}
+
+function handleFilterChange(e) {
+  const { name, value, checked } = e.target;
+
+  if (name == "status") {
+    if (checked) {
+      document.querySelectorAll('input[name="status"]').forEach((checkbox) => {
+        if (checkbox !== e.target) checkbox.checked = false;
+      });
+
+      updateFilterSet(name, value, true);
+    } else {
+      e.target.checked = true;
+      return;
+    }
+  } else {
+    updateFilterSet(name, value, checked);
+  }
+
+  applyFilters();
+}
+
+function applyFilters() {
+  markers.forEach((markerData) => {
+    const { art, element } = markerData;
+    let visible = true;
+
+    if (art.status !== filters.status) {
+      visible = false;
+    }
+
+    if (visible) {
+      if (filters.districts.size > 0) {
+        visible = filters.districts.has(art.district);
+      } else {
+        visible = false;
+      }
+    }
+
+    if (visible) {
+      if (filters.festivals.size > 0) {
+        visible = filters.festivals.has(art.festival);
+      } else {
+        visible = false;
+      }
+    }
+
+    element.style.display = visible ? "" : "none";
+  });
+}
+
+function clearMarkers() {
+  markers.forEach(({ marker }) => {
+    map.removeChilde(marker);
+  });
+  markers = [];
 }
 
 function openSidePanel(art) {
@@ -90,11 +203,6 @@ function closeSidePanel() {
   document.querySelector("#card").classList.add("is-closed");
   document.querySelector(".filters__open-button").classList.remove("is-opened");
 }
-
-new Navigation();
-new Filters();
-
-initMap();
 
 async function initMap() {
   await ymaps3.ready;
@@ -209,23 +317,28 @@ async function initMap() {
 
   // --------------------------------------------------------------------
 
-  const clickCallback = (object, event) => {
-    try {
-      if (object.type == "hotspot") {
-        console.log("it is a hotspot");
-      } else {
-        console.log("is is something else???");
-      }
-    } catch (e) {
-      console.log("it is an inactive area");
-    }
-  };
+  // const clickCallback = (object, event) => {
+  //   try {
+  //     if (object.type == "hotspot") {
+  //       console.log("it is a hotspot");
+  //     } else {
+  //       console.log("is is something else???");
+  //     }
+  //   } catch (e) {
+  //     console.log("it is an inactive area");
+  //   }
+  // };
 
-  // Объект-слушатель
-  const mapListener = new YMapListener({
-    layer: "any",
-    onClick: clickCallback,
-  });
+  // // Объект-слушатель
+  // const mapListener = new YMapListener({
+  //   layer: "any",
+  //   onClick: clickCallback,
+  // });
 
-  map.addChild(mapListener);
+  // map.addChild(mapListener);
 }
+
+new Navigation();
+new Filters();
+
+initMap();

@@ -562,6 +562,8 @@ svg * {
   top: 0.5rem;
   left: 0.5rem;
   overflow-y: scroll;
+  transform: translateX(0rem);
+  transition-duration: var(--transition-duration-short);
 }
 .card.is-closed {
   position: absolute !important;
@@ -574,6 +576,7 @@ svg * {
   clip-path: inset(100%) !important;
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
+  transform: translateX(-25rem);
 }
 .card__button {
   top: 1rem;
@@ -610,6 +613,10 @@ svg * {
   position: absolute;
   border: 1px solid white;
   transform: translateX(-30%) translateY(-100%);
+}
+
+.marker-container[hidden] {
+  display: none !important;
 }
 
 .marker {
