@@ -6,15 +6,16 @@
   padding: rem(10) rem(20);
   position: absolute;
   z-index: 4;
-  margin-top: rem(8);
-  margin-left: rem(8);
+  top: rem(8);
+  left: rem(8);
   overflow-y: scroll;
+  // transform: translateX(rem(0));
 
   // добавить кастомный скролл-бар
 
   &.is-closed {
     @include visually-hidden;
-    display: none;
+    // transform: translateX(rem(-400));
   }
 
   &__button {

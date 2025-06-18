@@ -559,8 +559,8 @@ svg * {
   padding: 0.625rem 1.25rem;
   position: absolute;
   z-index: 4;
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
+  top: 0.5rem;
+  left: 0.5rem;
   overflow-y: scroll;
 }
 .card.is-closed {
@@ -574,7 +574,6 @@ svg * {
   clip-path: inset(100%) !important;
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
-  display: none;
 }
 .card__button {
   top: 1rem;
