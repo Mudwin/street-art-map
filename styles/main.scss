@@ -15,6 +15,7 @@
 @use "blocks/gallery";
 @use "blocks/text-field";
 @use "blocks/file-field";
+@use "blocks/card";
 
 .marker-container {
   position: absolute;
@@ -29,4 +30,8 @@
   display: flex;
   height: 32px;
   transition: border-width 0.3s linear;
+}
+
+body {
+  overflow-y: hidden;
 }

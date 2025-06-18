@@ -238,7 +238,7 @@ svg * {
 }
 
 .button {
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   border-radius: 0.9375rem;
   color: var(--color-black);
@@ -286,10 +286,10 @@ svg * {
   z-index: 1;
   top: 0;
   right: 0;
-  height: 41.25rem;
+  height: 42.5rem;
   width: 9.375rem;
-  margin-top: 0.3125rem;
-  margin-right: 0.3125rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
   display: flex;
   transition-duration: var(--transition-duration-medium);
   transform: translateX(12.5rem);
@@ -553,6 +553,59 @@ svg * {
   transition-duration: 0.1s;
 }
 
+.card {
+  width: 21.875rem;
+  height: 42.5rem;
+  padding: 0.625rem 1.25rem;
+  position: absolute;
+  z-index: 4;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  overflow-y: scroll;
+}
+.card.is-closed {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+.card__button {
+  top: 1rem;
+  right: 1.625rem;
+}
+.card__img {
+  width: 19.375rem;
+  height: 19.375rem;
+  border-radius: 1.25rem;
+  background-color: var(--color-white);
+  margin-bottom: 0.625rem;
+}
+.card__title {
+  font-size: 1.5625rem;
+  font-weight: 700;
+  line-height: 2.1875rem;
+  margin-bottom: 1.25rem;
+}
+.card__section {
+  margin-bottom: 0.9375rem;
+}
+.card__subtitle {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.3125rem;
+}
+.card__info {
+  font-size: 0.8125rem;
+  color: var(--color-light-gray);
+}
+
 .marker-container {
   position: absolute;
   border: 1px solid white;
@@ -566,6 +619,10 @@ svg * {
   display: flex;
   height: 32px;
   transition: border-width 0.3s linear;
+}
+
+body {
+  overflow-y: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

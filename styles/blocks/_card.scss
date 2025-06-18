@@ -1,0 +1,56 @@
+@use "../helpers" as *;
+
+.card {
+  width: rem(350);
+  height: rem(680);
+  padding: rem(10) rem(20);
+  position: absolute;
+  z-index: 4;
+  margin-top: rem(8);
+  margin-left: rem(8);
+  overflow-y: scroll;
+
+  // добавить кастомный скролл-бар
+
+  &.is-closed {
+    @include visually-hidden;
+  }
+
+  &__button {
+    top: rem(16);
+    right: rem(26);
+  }
+
+  &__img {
+    @include square(rem(310));
+    border-radius: rem(20);
+    background-color: var(--color-white);
+    margin-bottom: rem(10);
+  }
+
+  &__img img {
+  }
+
+  &__title {
+    font-size: rem(25);
+    font-weight: 700;
+    line-height: rem(35);
+    margin-bottom: rem(20);
+  }
+
+  &__section {
+    margin-bottom: rem(15);
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: rem(20);
+    margin-bottom: rem(5);
+  }
+
+  &__info {
+    font-size: rem(13);
+    color: var(--color-light-gray);
+  }
+}

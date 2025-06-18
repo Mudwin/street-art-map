@@ -1,7 +1,7 @@
 @use "../helpers" as *;
 
 .button {
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   border-radius: rem(15);
   color: var(--color-black);

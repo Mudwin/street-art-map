@@ -66,8 +66,29 @@ function createMarkerElement() {
 }
 
 function openSidePanel(art) {
-  console.log("test", art.title);
-  console.log(art.coords);
+  document.querySelector("#card-title").textContent = art.title;
+  document.querySelector("#card-author").textContent = art.author;
+  document.querySelector("#card-festival").textContent = art.festival;
+  document.querySelector("#card-status").textContent = art.status;
+  document.querySelector(
+    "#card-coords"
+  ).textContent = `${art.coords._lat}, ${art.coords._long}`;
+
+  document.querySelector("#card").classList.remove("is-closed");
+  document.querySelector(".filters__open-button").classList.add("is-opened");
+
+  if (!document.querySelector(".filters").classList.contains("is-closed")) {
+    document.querySelector(".filters").classList.add("is-closed");
+  }
+
+  document.querySelector("#card-close-button").addEventListener("click", () => {
+    closeSidePanel();
+  });
+}
+
+function closeSidePanel() {
+  document.querySelector("#card").classList.add("is-closed");
+  document.querySelector(".filters__open-button").classList.remove("is-opened");
 }
 
 new Navigation();
