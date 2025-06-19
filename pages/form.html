@@ -8,7 +8,8 @@
     />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="icon" href="../icons/ekb-logo.png" type="image/x-icon" />
-    <script src="./scripts/main.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <script src="../scripts/add-form.js" type="module" defer></script>
     <title>Ekaterinburg Street Art Map | Добавить на карту</title>
   </head>
   <body class="form page">
@@ -17,20 +18,34 @@
         <span>На главную</span>
       </a>
       <h1 class="page__title h1">Хотите добавить объект на карту?</h1>
-      <form action="#" class="form__body">
+      <form action="#" class="form__body" name="add-form" id="add-form">
         <div class="form__element">
           <label for="location" class="form__label">
-            Местоположение объекта <span>*</span>
+            Местоположение объекта <span aria-hidden="true">*</span>
           </label>
           <input
             type="text"
             id="location"
+            name="location"
             class="form__text-field text-field"
+            placeholder="Улица, дом или координаты"
+            required
           />
+          <div class="form__error" id="location-error"></div>
         </div>
         <div class="form__element">
-          <label for="photo" class="form__label"> Фото объекта </label>
-          <input type="file" class="form__file-field file-field" id="photo" />
+          <label for="photo" class="form__label">
+            Фото объекта <span aria-hidden="true">*</span>
+          </label>
+          <input
+            type="file"
+            class="form__file-field file-field"
+            id="photo"
+            name="photo"
+            accept="image/*"
+            required
+          />
+          <div class="form__error" id="photo-error"></div>
         </div>
         <div class="form__element">
           <label for="description" class="form__label">
@@ -38,10 +53,15 @@
           </label>
           <textarea
             id="description"
+            name="description"
             class="form__textarea text-field"
+            placeholder='Название: "Кто мы, откуда, куда мы идем?", автор: Тима Радя'
           ></textarea>
         </div>
-        <button class="form__button button" type="submit">Отправить</button>
+        <button class="form__button button" type="submit" id="submit-button">
+          Отправить
+        </button>
+        <div class="form__message" id="form-message"></div>
       </form>
     </div>
   </body>

@@ -155,6 +155,8 @@ svg * {
   --color-white: #d9dadb;
   --color-black: #000000;
   --color-gray: rgb(71, 74, 81);
+  --color-red: rgb(237, 57, 57);
+  --color-green: rgb(39, 162, 5);
   --color-gray-transparent: rgb(71, 74, 81, 0.9);
   --color-light-gray: rgb(181, 184, 177);
   --color-hover-gray: rgb(120, 133, 139);
@@ -450,6 +452,7 @@ svg * {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .form__element {
   display: flex;
@@ -462,7 +465,7 @@ svg * {
   align-self: flex-start;
 }
 .form__label span {
-  color: rgb(237, 57, 57);
+  color: var(--color-red);
 }
 .form__text-field {
   width: 28.125rem;
@@ -481,6 +484,27 @@ svg * {
   width: 9.375rem;
   height: 3.125rem;
   margin-top: -3.125rem;
+}
+.form__error {
+  color: var(--color-red);
+  font-size: 0.875rem;
+  display: none;
+}
+.form__error:not(:empty) {
+  display: block;
+}
+.form__message {
+  align-self: flex-end;
+  margin-top: -1.875rem;
+  display: none;
+}
+.form__message.success {
+  color: var(--color-green);
+  display: block;
+}
+.form__message.error {
+  color: var(--color-red);
+  display: block;
 }
 
 .page {
