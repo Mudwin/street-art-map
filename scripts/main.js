@@ -183,7 +183,7 @@ function openSidePanel(art) {
     .querySelector("#card-img")
     .insertAdjacentHTML(
       "afterbegin",
-      `<img src="${art.photoURL}" alt="Изображение объекта">`
+      `<img src="${art.photoURL}" alt="Изображение объекта" crossorigin="anonymous">`
     );
   document.querySelector("#card-title").textContent = art.title;
   document.querySelector("#card-author").textContent = art.author;
