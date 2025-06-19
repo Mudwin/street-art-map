@@ -179,6 +179,12 @@ function clearMarkers() {
 }
 
 function openSidePanel(art) {
+  document
+    .querySelector("#card-img")
+    .insertAdjacentHTML(
+      "afterbegin",
+      `<img src="${art.photoURL}" alt="Изображение объекта">`
+    );
   document.querySelector("#card-title").textContent = art.title;
   document.querySelector("#card-author").textContent = art.author;
   document.querySelector("#card-festival").textContent = art.festival;
