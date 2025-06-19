@@ -1,0 +1,19 @@
+@use "../helpers" as *;
+
+.marker {
+  cursor: pointer;
+  overflow: hidden;
+  width: 32px;
+  display: flex;
+  height: 32px;
+  transition: border-width 0.3s linear;
+
+  &-container {
+    position: absolute;
+    transform: translateX(-50%) translateY(-100%);
+
+    &[hidden] {
+      display: none !important;
+    }
+  }
+}

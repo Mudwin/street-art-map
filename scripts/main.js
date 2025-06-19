@@ -46,7 +46,7 @@ function createMarkerElement() {
   markerElement.classList.add("marker");
 
   const markerImage = document.createElement("img");
-  markerImage.src = "./icons/pin.svg";
+  markerImage.src = "./icons/marker.png";
   markerImage.classList.add("image");
   markerImage.alt = "Маркер";
 
