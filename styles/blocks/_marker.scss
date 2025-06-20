@@ -3,17 +3,25 @@
 .marker {
   cursor: pointer;
   overflow: hidden;
-  width: 32px;
   display: flex;
+  width: 32px;
   height: 32px;
-  transition: border-width 0.3s linear;
 
   &-container {
     position: absolute;
+    transition-duration: var(--transition-duration-short);
     transform: translateX(-50%) translateY(-100%);
 
     &[hidden] {
       display: none !important;
+    }
+
+    &:hover {
+      transform: translateX(-50%) translateY(-100%) scale(1.2);
+    }
+
+    &:active {
+      transform: translateX(-50%) translateY(-100%) scale(1);
     }
   }
 }

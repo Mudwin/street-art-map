@@ -649,17 +649,23 @@ svg * {
 .marker {
   cursor: pointer;
   overflow: hidden;
-  width: 32px;
   display: flex;
+  width: 32px;
   height: 32px;
-  transition: border-width 0.3s linear;
 }
 .marker-container {
   position: absolute;
+  transition-duration: var(--transition-duration-short);
   transform: translateX(-50%) translateY(-100%);
 }
 .marker-container[hidden] {
   display: none !important;
+}
+.marker-container:hover {
+  transform: translateX(-50%) translateY(-100%) scale(1.2);
+}
+.marker-container:active {
+  transform: translateX(-50%) translateY(-100%) scale(1);
 }
 
 /*# sourceMappingURL=main.css.map */
