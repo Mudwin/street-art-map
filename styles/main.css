@@ -192,7 +192,7 @@ body {
   background-position: center;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 0rem;
 }
 
@@ -557,14 +557,33 @@ svg * {
 .card {
   width: 21.875rem;
   height: 42.5rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 0.3125rem;
   position: absolute;
   z-index: 4;
+  overflow: hidden;
   top: 0.5rem;
   left: 0.5rem;
-  overflow-y: scroll;
   transform: translateX(0rem);
   transition-duration: var(--transition-duration-short);
+}
+.card::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0rem;
+  margin-right: 0.625rem;
+}
+.card__content {
+  height: 100%;
+  padding: 0rem 0.9375rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.card__content::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.1875rem;
+}
+.card__content::-webkit-scrollbar-thumb {
+  background-color: var(--color-hover-gray);
+  border-radius: 1.875rem;
 }
 .card.is-closed {
   position: absolute !important;

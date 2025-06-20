@@ -3,16 +3,37 @@
 .card {
   width: rem(350);
   height: rem(680);
-  padding: rem(10) rem(20);
+  padding: rem(10) rem(5);
   position: absolute;
   z-index: 4;
+  overflow: hidden;
   top: rem(8);
   left: rem(8);
-  overflow-y: scroll;
   transform: translateX(rem(0));
   transition-duration: var(--transition-duration-short);
 
-  // добавить кастомный скролл-бар
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: rem(0);
+    margin-right: rem(10);
+  }
+
+  &__content {
+    height: 100%;
+    padding: rem(0) rem(15);
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      width: rem(3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-hover-gray);
+      border-radius: rem(30);
+    }
+  }
 
   &.is-closed {
     @include visually-hidden;

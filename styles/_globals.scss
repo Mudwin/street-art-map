@@ -12,11 +12,9 @@ body {
   background-position: center;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: rem(0);
 }
-
-// Добавить иерархию заголовков + глобальные стили для них
 
 a:not(.button) {
   text-decoration: none;
