@@ -8,10 +8,7 @@
   }
 }
 
-// Для адаптива шрифта
-
 @function fluid($max: 48, $min: 16) {
-  // Кастомные, в зависимости от дизайна
   $maxViewportWidth: 1400;
   $minViewportWidth: 360;
 

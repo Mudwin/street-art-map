@@ -221,7 +221,6 @@ async function initMap() {
     YMapMarker,
   } = ymaps3;
 
-  // Инициализация карты
   map = new YMap(document.getElementById("map"), {
     location: {
       center: [60.603436, 56.838353],
@@ -231,7 +230,6 @@ async function initMap() {
     mode: "vector",
   });
 
-  // Слой для отображения схематической карты
   map.addChild(
     new YMapDefaultSchemeLayer({
       theme: "dark",
@@ -320,28 +318,6 @@ async function initMap() {
   map.addChild(new YMapDefaultFeaturesLayer({}));
 
   loadArtObjects();
-
-  // --------------------------------------------------------------------
-
-  // const clickCallback = (object, event) => {
-  //   try {
-  //     if (object.type == "hotspot") {
-  //       console.log("it is a hotspot");
-  //     } else {
-  //       console.log("is is something else???");
-  //     }
-  //   } catch (e) {
-  //     console.log("it is an inactive area");
-  //   }
-  // };
-
-  // // Объект-слушатель
-  // const mapListener = new YMapListener({
-  //   layer: "any",
-  //   onClick: clickCallback,
-  // });
-
-  // map.addChild(mapListener);
 }
 
 new Navigation();

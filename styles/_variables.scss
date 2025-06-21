@@ -1,13 +1,13 @@
 @use "helpers" as *;
 
 :root {
-  --color-white: #d9dadb; // for nav's text
-  --color-black: #000000; // for button's text
+  --color-white: #d9dadb;
+  --color-black: #000000;
   --color-gray: rgb(71, 74, 81);
   --color-red: rgb(237, 57, 57);
   --color-green: rgb(39, 162, 5);
-  --color-gray-transparent: rgb(71, 74, 81, 0.9); // for navigation
-  --color-light-gray: rgb(181, 184, 177); // for buttons
+  --color-gray-transparent: rgb(71, 74, 81, 0.9);
+  --color-light-gray: rgb(181, 184, 177);
   --color-hover-gray: rgb(120, 133, 139);
   --color-active-gray: rgb(187, 187, 187);
   --main-map-color: rgb(41, 51, 69);
