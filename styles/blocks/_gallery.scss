@@ -23,16 +23,55 @@
     border-radius: rem(20);
     border: rem(3) solid var(--color-white);
     transition-duration: var(--transition-duration-short);
+    position: relative;
 
     & img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      transition-duration: var(--transition-duration-short);
     }
 
     &:hover {
       transform: scale(1.05);
+    }
+
+    &:hover img {
+      opacity: 0.5;
+    }
+
+    &:hover .gallery__info {
+      transform: translateY(0);
+      // opacity: 1;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: rem(10);
+    transform: translateY(rem(150));
+    // opacity: 0;
+    transition-duration: var(--transition-duration-short);
+
+    &-content {
+      height: 100%; // max-height: 200px
+    }
+
+    &-title {
+      font-weight: 700;
+      margin-bottom: rem(10);
+      font-size: rem(15);
+      color: var(--color-light-gray);
+    }
+
+    &-subtitle {
+      font-size: rem(12);
+      color: var(--color-hover-gray);
     }
   }
 }

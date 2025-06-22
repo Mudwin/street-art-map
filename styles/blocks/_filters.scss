@@ -74,7 +74,6 @@
 
       & input {
         @include square(rem(20));
-        cursor: pointer;
       }
 
       & label {
