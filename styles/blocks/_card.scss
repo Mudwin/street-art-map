@@ -48,7 +48,7 @@
   &__img {
     @include square(rem(310));
     border-radius: rem(20);
-    background-color: var(--color-white);
+    background-color: transparent;
     margin-bottom: rem(10);
     border: 2px solid var(--color-white);
     overflow: hidden;

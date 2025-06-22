@@ -609,7 +609,7 @@ svg * {
   width: 19.375rem;
   height: 19.375rem;
   border-radius: 1.25rem;
-  background-color: var(--color-white);
+  background-color: transparent;
   margin-bottom: 0.625rem;
   border: 2px solid var(--color-white);
   overflow: hidden;
@@ -657,7 +657,7 @@ svg * {
   height: 14.0625rem;
   cursor: pointer;
   overflow: hidden;
-  background-color: var(--color-white);
+  background-color: transparent;
   border-radius: 1.25rem;
   border: 0.1875rem solid var(--color-white);
   transition-duration: var(--transition-duration-short);
@@ -672,6 +672,7 @@ svg * {
 }
 .gallery__item:hover {
   transform: scale(1.05);
+  background-color: var(--color-black);
 }
 .gallery__item:hover img {
   opacity: 0.5;
@@ -688,9 +689,6 @@ svg * {
   padding: 0.625rem;
   transform: translateY(9.375rem);
   transition-duration: var(--transition-duration-short);
-}
-.gallery__info-content {
-  height: 100%;
 }
 .gallery__info-title {
   font-weight: 700;

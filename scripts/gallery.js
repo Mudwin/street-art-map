@@ -35,8 +35,20 @@ async function loadGallery() {
 
       galleryElement.innerHTML += artImage;
 
-      document.querySelectorAll(".gallery__item").forEach((item) => {
-        item.style.backgroundColor = "#000000";
+      const galleryInfoContainers = document.querySelectorAll(
+        ".gallery__info-content"
+      );
+
+      galleryInfoContainers.forEach((container) => {
+        if (container.offsetHeight < 60) {
+          container.querySelector(".gallery__info-title").style.fontSize =
+            "20px";
+        }
+
+        if (container.offsetHeight > 112) {
+          container.querySelector(".gallery__info-title").style.fontSize =
+            "12px";
+        }
       });
     });
   } catch (error) {
